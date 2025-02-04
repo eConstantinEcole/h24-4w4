@@ -1,17 +1,20 @@
+<?php 
+// Modele de base de notre thème
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>4W4-Voyage</title>
-    <link rel="stylesheet" href="normalize.css"> 
-    <link rel="stylesheet" href="style.css">    
+    <?php wp_head() ?>  
 </head>
 <body>
     <header>
         <div class="entete">
             <figure class="entete__logo">
-                <img src="images/logo.png" alt="logo voyage">
+                <img src="http://localhost/4w4/wp-content/themes/tp1/images/logo.png" alt="logo voyage">
             </figure>
             <label for="chk__bruger" class="chk__bruger">
                 <img src="https://s2.svgbox.net/hero-outline.svg?ic=menu" alt="" style="width: 32px; height: 32px;">

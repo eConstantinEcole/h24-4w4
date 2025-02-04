@@ -1,20 +1,37 @@
 @charset "UTF-8";
 /*
-Theme Name: 4W4 - Eddy Martin
+Theme Name: 4W4 - Constantin Schmouker
 Theme URI: https://referenced.ca
-Author: Eddy Martin
-Author URI: https://github.com/eddytuto
+Author: Constantin Schmouker
+Author URI: 
 Description: Thème de base développer dans le cadre du cours 4W4
 Version: 1.0
 Tested up to: 6.2
 Requires PHP: 7.0
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Text Domain: 4w4-eddy
+Text Domain: 4w4-constantin
 */
 /* /////////////////////
 Les Variables
 //////////////////////// */
+/* /////////////////////
+Les Bases
+//////////////////////// */
+a {
+  color: #5a5;
+  text-decoration: none;
+}
+a:hover {
+  color: rgba(0, 0, 0, 0.1);
+}
+a:visited {
+  color: rgba(0, 0, 0, 0.3);
+}
+a:focus {
+  color: rgba(0, 0, 0, 0.4);
+}
+
 /* /////////////////////////
 Les composants
 /////////////////////////// */
@@ -34,8 +51,6 @@ Les composants
   }
 }
 .menu__a {
-  color: #333;
-  text-decoration: none;
   padding: 2px 5px;
 }
 
@@ -118,6 +133,27 @@ Layout
   background-image: url("images/maldives.jpg");
 }
 
+.burger {
+  display: none;
+}
+@media screen and (max-width: 700px) {
+  .burger {
+    display: block;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 99;
+  }
+}
+
+.chk__burger {
+  display: none;
+}
+
+.chk__burger:checked ~ .entete__nav {
+  display: flex;
+}
+
 .entete {
   display: flex;
   justify-content: space-between;
@@ -125,13 +161,23 @@ Layout
 }
 .entete__nav {
   display: flex;
-  flex-direction: row;
+  justify-content: space-between;
   align-items: center;
+  flex-direction: row;
   gap: 0 40px;
   flex-wrap: wrap;
 }
 @media screen and (max-width: 700px) {
   .entete__nav {
+    display: none;
     flex-direction: column;
+    height: 40vh;
+    width: 100vw;
+    padding-bottom: 20px;
+    gap: 30px 0;
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: white;
   }
 }/*# sourceMappingURL=style.css.map */
