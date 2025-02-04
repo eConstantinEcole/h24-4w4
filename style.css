@@ -10,7 +10,7 @@ Tested up to: 6.2
 Requires PHP: 7.0
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Text Domain: 4w4-constantin
+Text Domain: 4w4-constant
 */
 /* /////////////////////
 Les Variables
@@ -124,13 +124,26 @@ Le composant .carte
 Layout 
 /////////////////////////// */
 .global {
-  margin: 0 auto;
-  max-width: 1000px;
+  margin: 5%;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 .hero {
   min-height: 100vh;
   background-image: url("images/maldives.jpg");
+  display: flex;
+  flex-direction: column;
+}
+.hero button {
+  display: flex;
+  background-color: rgba(0, 229, 255, 0.527);
+  border: none;
+  border-radius: 10px;
+  padding: 10px 20px;
+}
+.hero button, .hero a, .hero p {
+  margin-top: 2%;
 }
 
 .burger {

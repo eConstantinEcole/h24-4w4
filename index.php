@@ -16,10 +16,10 @@
             <figure class="entete__logo">
                 <img src="http://localhost/4w4/wp-content/themes/tp1/images/logo.png" alt="logo voyage">
             </figure>
-            <label for="chk__bruger" class="chk__bruger">
+            <label for="chk__burger" class="chk__burger">
                 <img src="https://s2.svgbox.net/hero-outline.svg?ic=menu" alt="" style="width: 32px; height: 32px;">
             </label>
-            <input type="checkbox" id="chk_burger" class="chk__bruger">
+            <input type="checkbox" id="chk_burger" class="chk__burger">
 
             <div class="entete__nav">
                 <nav class="entete__menu">
@@ -59,7 +59,7 @@
     <section class="hero">
         <div class="hero__contenu global">
             <h1 class="hero__titre">
-                Club de voyage
+            Voyagez Autrement avec Mondo Voyages !
             </h1>
             <p class="hero__description">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur aspernatur est officiis, mollitia minus asperiores quas libero saepe consequuntur at blanditiis et eligendi, sequi sit quae laboriosam, ex delectus nesciunt.
@@ -68,7 +68,7 @@
                 info@cmaisonneuve.qc.ca
             </a>
             <button class="hero__bouton">
-                Inscription
+                S'INSCRIRE
             </button>
             <div class="hero__icone-app">
                 <img src="https://s2.svgbox.net/social.svg?ic=facebook&color=000000" width="20" height="20">
@@ -78,6 +78,36 @@
             </div>
         </div>
     </section>
+
+    <section class="inscription">
+        <div id="containeur__infos">
+            <div class="nom">
+                <p class="inscription__titre">NOM</p>
+                <textarea id="nom" placeholder="Écrivez votre nom"></textarea>
+            </div>
+            <div class="prenom">
+            <p class="inscription__titre">PRENOM</p>
+
+            <textarea id="prenom" placeholder="Écrivez votre prénom"></textarea>
+
+            </div>
+            <div class="courriel">
+            <p class="inscription__titre">COURRIEL</p>
+
+            <textarea id="courriel" placeholder="Écrivez votre courriel"></textarea>
+
+            </div>
+            <div class="telephone">
+            <p class="inscription__titre">TELEPHONE</p>
+
+            <textarea id="telephone" placeholder="Écrivez votre téléphone"></textarea>
+
+            </div>
+            <button class="inscription__bouton">S'INSCRIRE</button>
+        </div>
+
+    </section>
+
     <section class="galerie">
         <figure class="galerie__fig">
             <img src="" alt="">

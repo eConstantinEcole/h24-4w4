@@ -1,9 +1,32 @@
+
 .global {
-   margin : 0 auto;
-   max-width: 1000px;
+    margin: 5%;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 .hero{
     min-height: 100vh;
     background-image: url("images/maldives.jpg");
+    display: flex;
+    flex-direction: column;
+    
+    
+    
+    button{
+    display: flex;
+    background-color: rgba(0, 229, 255, 0.527);
+    border: none;
+    border-radius: 10px;
+    padding: 10px 20px;
+    }
+
+    button, a, p{
+        margin-top: 2%;
+    }
 }
+
+.inscription {
+    
+}
+

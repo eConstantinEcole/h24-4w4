@@ -22,11 +22,12 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-
+    
     &__nav {
         display: flex;
         justify-content: space-between;
         align-items: center;
+        
 
         @media screen and (max-width:$point__rupture) {
             display: none;
@@ -42,9 +43,10 @@
         }
         flex-direction: row; 
         gap: 0 40px;
-        flex-wrap: wrap;
+        flex-wrap: wrap; 
 
     }
+    
 }
 
 
