@@ -16,10 +16,16 @@
             <figure class="entete__logo">
                 <img src="http://localhost/4w4/wp-content/themes/tp1/images/logo.png" alt="logo voyage">
             </figure>
-            <label for="chk__burger" class="chk__burger">
-                <img src="https://s2.svgbox.net/hero-outline.svg?ic=menu" alt="" style="width: 32px; height: 32px;">
-            </label>
+
+
             <input type="checkbox" id="chk_burger" class="chk__burger">
+            <label for="chk_burger">
+                <img src="https://s2.svgbox.net/hero-outline.svg?ic=menu" alt="Menu" style="width: 32px; height: 32px;">
+            </label>
+
+
+
+
 
             <div class="entete__nav">
                 <nav class="entete__menu">
@@ -80,27 +86,25 @@
     </section>
 
     <section class="inscription">
-        <div id="containeur__infos">
-            <div class="nom">
-                <p class="inscription__titre">NOM</p>
-                <textarea id="nom" placeholder="Écrivez votre nom"></textarea>
-            </div>
-            <div class="prenom">
+    <div id="containeur__infos">
+        <div class="nom">
+            <p class="inscription__titre">NOM</p>
+            <input type="text" id="nom" placeholder="Écrivez votre nom">
+        </div>
+        <div class="prenom">
             <p class="inscription__titre">PRENOM</p>
-
-            <textarea id="prenom" placeholder="Écrivez votre prénom"></textarea>
-
-            </div>
-            <div class="courriel">
+            <input type="text" id="prenom" placeholder="Écrivez votre prénom">
+        </div>
+        <div class="courriel">
             <p class="inscription__titre">COURRIEL</p>
-
-            <textarea id="courriel" placeholder="Écrivez votre courriel"></textarea>
-
-            </div>
-            <div class="telephone">
+            <input type="text" id="courriel" placeholder="Écrivez votre courriel">
+        </div>
+        <div class="telephone">
             <p class="inscription__titre">TELEPHONE</p>
+            <input type="text" id="telephone" placeholder="Écrivez votre téléphone">
+        </div>
+    </div>
 
-            <textarea id="telephone" placeholder="Écrivez votre téléphone"></textarea>
 
             </div>
             <button class="inscription__bouton">S'INSCRIRE</button>
@@ -108,22 +112,21 @@
 
     </section>
 
-    <section class="galerie">
-        <figure class="galerie__fig">
-            <img src="" alt="">
-        </figure>
-    </section>
- 
+
     <section class="promotion">
-        <div class="carte carte--grande">
-            <figure class="carte__image">
-                <img src="images/img1.jpg" alt="Image de voyage">
-            </figure>
-            <div class="carte__contenu">
-                <h2 class="carte__titre">Destination de rêve</h2>
-                <p class="carte__description">Découvrez des endroits magnifiques à travers le monde.</p>
-                <button class="carte__bouton carte__bouton--actif">Réserver</button>
-            </div>
+        <h1 class="promotion__titre">Nos destinations favorites</h1>
+
+        <div class="images__promotions">
+            <img src="wp-content/themes/tp1/images/images (1).jpg" alt="">
+            <img src="wp-content/themes/tp1/images/images (2).jpg" alt="">
+            <img src="wp-content/themes/tp1/images/images.jpg" alt="">
+            <img src="wp-content/themes/tp1/images/téléchargement (1).jpg" alt="">
+            <img src="wp-content/themes/tp1/images/téléchargement (2).jpg" alt="">
+            <img src="wp-content/themes/tp1/images/téléchargement (3).jpg" alt="">
+            <img src="wp-content/themes/tp1/images/téléchargement (4).jpg" alt="">
+            <img src="wp-content/themes/tp1/images/téléchargement (5).jpg" alt="">
+            <img src="wp-content/themes/tp1/images/téléchargement (6).jpg" alt="">
+            <img src="wp-content/themes/tp1/images/téléchargement.jpg" alt="">
         </div>
     </section>
 </body>
