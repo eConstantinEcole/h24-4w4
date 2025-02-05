@@ -51,7 +51,7 @@
         min-width: 200px;
     }
 
-    .inscription__bouton {
+    &__bouton {
         margin-top: 20px;
         padding: 10px 20px;
         background-color: #007BFF;
@@ -71,7 +71,7 @@
         margin: 2%;
     }
 
-    .images__promotions {
+    &__images {
         display: grid;
         grid-template-columns: repeat(5, 1fr); 
         grid-template-rows: repeat(2, auto); 
@@ -79,7 +79,7 @@
         margin: 2%;
     }
 
-    .images__promotions img {
+    &__images img {
         width: 100%;
         height: auto;
         object-fit: cover; 

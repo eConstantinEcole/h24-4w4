@@ -48,9 +48,6 @@
                         <li class="menu__li">
                             <a class="menu__a"  href="#">Culturelle</a>
                         </li>
-                        <li class="menu__li">
-                            <a  class="menu__a" href="#">Zen</a>
-                        </li>
                     </ul>
                 </nav>
                 <div class="entete__recherche">
@@ -116,7 +113,7 @@
     <section class="promotion">
         <h1 class="promotion__titre">Nos destinations favorites</h1>
 
-        <div class="images__promotions">
+        <div class="promotion__images">
             <img src="wp-content/themes/tp1/images/images (1).jpg" alt="">
             <img src="wp-content/themes/tp1/images/images (2).jpg" alt="">
             <img src="wp-content/themes/tp1/images/images.jpg" alt="">

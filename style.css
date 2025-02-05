@@ -168,7 +168,7 @@ Layout
   flex: 1;
   min-width: 200px;
 }
-.inscription .inscription__bouton {
+.inscription__bouton {
   margin-top: 20px;
   padding: 10px 20px;
   background-color: #007BFF;
@@ -181,14 +181,14 @@ Layout
 .promotion h1 {
   margin: 2%;
 }
-.promotion .images__promotions {
+.promotion__images {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   grid-template-rows: repeat(2, auto);
   gap: 5px;
   margin: 2%;
 }
-.promotion .images__promotions img {
+.promotion__images img {
   width: 100%;
   height: auto;
   object-fit: cover;
