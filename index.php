@@ -14,7 +14,8 @@
     <header>
         <div class="entete">
             <figure class="entete__logo">
-                <img src="http://localhost/4w4/wp-content/themes/tp1/images/logo.png" alt="logo voyage">
+            <img src="<?php echo get_template_directory_uri() . '/images/logo.png' ?>" alt="logo voyage">
+
             </figure>
 
 
@@ -126,5 +127,21 @@
             <img src="wp-content/themes/tp1/images/téléchargement.jpg" alt="">
         </div>
     </section>
+
+    <section class="populaire">
+        <div class="global">
+            <?php if (have_posts()): while (have_posts()) : the_post(); ?>
+            <article class="populaire__article">
+                <h2 class="populaire__titre"><?php the_title(); ?></h2>
+                <p class="populaire__description"><?php echo wp_trim_words(get_the_content(), 20, "...") ?></p>
+
+            </article>
+            <?php endwhile; endif; ?>
+        </div>
+    </section>
+
+    <footer>
+        <?php wp_footer() ?>
+    </footer>
 </body>
 </html>
