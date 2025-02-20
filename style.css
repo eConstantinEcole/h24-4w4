@@ -1,0 +1,290 @@
+@charset "UTF-8";
+/*
+Theme Name: 4W4 - Constantin Schmouker
+Theme URI: https://referenced.ca
+Author: Constantin Schmouker
+Author URI: 
+Description: Thème de base développer dans le cadre du cours 4W4
+Version: 1.0
+Tested up to: 6.2
+Requires PHP: 7.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: 4w4-constant
+*/
+/* /////////////////////
+Les Variables
+//////////////////////// */
+/* /////////////////////
+Les Bases
+//////////////////////// */
+a {
+  color: #5a5;
+  text-decoration: none;
+}
+a:hover {
+  color: rgba(0, 0, 0, 0.1);
+}
+a:visited {
+  color: rgba(0, 0, 0, 0.3);
+}
+a:focus {
+  color: rgba(0, 0, 0, 0.4);
+}
+
+/* /////////////////////////
+Les composants
+/////////////////////////// */
+/* /////////////////////////////////////////// menu principal */
+.menu {
+  flex: 1 1 50%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+@media screen and (max-width: 700px) {
+  .menu {
+    flex-direction: column;
+  }
+}
+.menu__a {
+  padding: 2px 5px;
+}
+
+/* *******************
+Le composant .carte
+********************** */
+.carte {
+  border: 1px solid #ddd;
+  padding: 20px;
+  border-radius: 8px;
+}
+.carte--grande {
+  padding: 40px;
+}
+.carte--petite {
+  padding: 20px;
+}
+.carte__image img {
+  max-width: 100%;
+  border-radius: 8px;
+}
+.carte__contenu {
+  margin-top: 15px;
+}
+.carte__titre {
+  font-size: 24px;
+  color: #333;
+}
+.carte__description {
+  font-size: 16px;
+  color: #666;
+}
+.carte__bouton {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.carte__bouton--actif {
+  background-color: #0056b3;
+}
+.carte__bouton:hover {
+  background-color: #0056b3;
+}
+
+.recherche {
+  display: flex;
+  align-items: center;
+  font-size: 1.2rem;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+.recherche__input {
+  flex: 1;
+  height: 1.8rem;
+  border: none;
+  outline: none;
+  background-color: rgba(0, 0, 0, 0.02);
+  border-right: 1px dotted rgba(0, 0, 0, 0.2);
+}
+.recherche__input:hover {
+  background-color: rgba(0, 0, 0, 0.06);
+}
+.recherche__img {
+  flex: 0 0 20px;
+  padding: 0 3px;
+}
+
+/* /////////////////////////
+Layout 
+/////////////////////////// */
+.global {
+  margin: 5%;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.hero {
+  min-height: 100vh;
+  background-image: url("images/maldives.jpg");
+  display: flex;
+  flex-direction: column;
+}
+.hero button {
+  display: flex;
+  background-color: rgba(0, 229, 255, 0.527);
+  border: none;
+  border-radius: 10px;
+  padding: 10px 20px;
+}
+.hero button, .hero a, .hero p {
+  margin-top: 2%;
+}
+
+.inscription {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, 140%);
+  background: white;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.3);
+  z-index: 10;
+  width: 60%;
+}
+.inscription #containeur__infos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: space-between;
+}
+.inscription #containeur__infos > div {
+  flex: 1;
+  min-width: 200px;
+}
+.inscription__bouton {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #007BFF;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.promotion h1 {
+  margin: 2%;
+}
+.promotion__images {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(2, auto);
+  gap: 5px;
+  margin: 2%;
+}
+.promotion__images img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.chk__burger {
+  display: none;
+}
+
+.chk__burger + label {
+  display: none;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  z-index: 10;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 700px) {
+  .chk__burger + label {
+    display: block;
+  }
+}
+.entete__nav {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  flex-direction: column;
+}
+
+.chk__burger:checked ~ .entete__nav {
+  display: flex;
+}
+
+.menu__a {
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.entete {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.entete__nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  gap: 0 40px;
+  flex-wrap: wrap;
+}
+@media screen and (max-width: 700px) {
+  .entete__nav {
+    display: none;
+    flex-direction: column;
+    height: 40vh;
+    width: 100vw;
+    padding-bottom: 20px;
+    gap: 30px 0;
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: white;
+  }
+}/*# sourceMappingURL=style.css.map */
+
+
+/*
+  --------------------------------- Layout du pied de page
+*/
+footer {
+  background-color: rgb(236, 136, 13);
+  color: #000;
+}
+
+.piedpage {
+  display: flex;
+  flex-direction: column;
+}
+.piedpage__s1 {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3rem;
+}
+.piedpage__s1__externe {
+  flex: 0 0 20%;
+}
+.piedpage__s1__externe .menu {
+  display: flex;
+  flex-direction: column;
+}
+.piedpage__s1__adresse {
+  flex: 0 0 40%;
+}
+.piedpage__s1__description {
+  flex: 1 0 400px;
+}/*# sourceMappingURL=style.css.map */
