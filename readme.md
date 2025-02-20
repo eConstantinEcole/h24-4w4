@@ -3,4 +3,4 @@
 
 Créer une page d'accueil en utilisant le standard BEM et Sass pour reproduire le contenu de maquette.
 Auteur: Constantin Schmouker 
-### Githyb-page: 
+### Githyb-page: https://econstantinecole.github.io/h24-4w4/
