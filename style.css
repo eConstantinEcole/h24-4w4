@@ -1,22 +1,22 @@
 @charset "UTF-8";
 /*
-Theme Name: 4W4 - Constantin Schmouker
+Theme Name: club-voyage
 Theme URI: https://referenced.ca
-Author: Constantin Schmouker
-Author URI: 
-Description: Thème de base développer dans le cadre du cours 4W4
+Author: Eddy Martin
+Author URI: https://github.com/eddytuto
+Description: Thème de base développer dans le cadre du cours de Worpress
 Version: 1.0
 Tested up to: 6.2
 Requires PHP: 7.0
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Text Domain: 4w4-constant
+Text Domain: club-voyage
 */
 /* /////////////////////
 Les Variables
 //////////////////////// */
 /* /////////////////////
-Les Bases
+Base
 //////////////////////// */
 a {
   color: #5a5;
@@ -48,9 +48,10 @@ Les composants
 @media screen and (max-width: 700px) {
   .menu {
     flex-direction: column;
+    gap: 6px 0;
   }
 }
-.menu__a {
+.menu-item a {
   padding: 2px 5px;
 }
 
@@ -61,6 +62,7 @@ Le composant .carte
   border: 1px solid #ddd;
   padding: 20px;
   border-radius: 8px;
+  flex: 1 1 220px;
 }
 .carte--grande {
   padding: 40px;
@@ -124,109 +126,41 @@ Le composant .carte
 Layout 
 /////////////////////////// */
 .global {
-  margin: 5%;
-  padding: 0;
-  box-sizing: border-box;
+  margin: 0 auto;
+  max-width: 1000px;
 }
 
 .hero {
   min-height: 100vh;
   background-image: url("images/maldives.jpg");
-  display: flex;
-  flex-direction: column;
-}
-.hero button {
-  display: flex;
-  background-color: rgba(0, 229, 255, 0.527);
-  border: none;
-  border-radius: 10px;
-  padding: 10px 20px;
-}
-.hero button, .hero a, .hero p {
-  margin-top: 2%;
 }
 
-.inscription {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, 140%);
-  background: white;
-  padding: 30px;
-  border-radius: 10px;
-  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.3);
-  z-index: 10;
-  width: 60%;
-}
-.inscription #containeur__infos {
+.boiteflex {
   display: flex;
   flex-wrap: wrap;
-  gap: 15px;
   justify-content: space-between;
-}
-.inscription #containeur__infos > div {
-  flex: 1;
-  min-width: 200px;
-}
-.inscription__bouton {
-  margin-top: 20px;
-  padding: 10px 20px;
-  background-color: #007BFF;
-  color: white;
-  border: none;
-  cursor: pointer;
-  border-radius: 5px;
+  gap: 10px;
 }
 
-.promotion h1 {
-  margin: 2%;
+.burger {
+  display: none;
 }
-.promotion__images {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  grid-template-rows: repeat(2, auto);
-  gap: 5px;
-  margin: 2%;
-}
-.promotion__images img {
-  width: 100%;
-  height: auto;
-  object-fit: cover;
+@media screen and (max-width: 700px) {
+  .burger {
+    display: block;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 99;
+  }
 }
 
 .chk__burger {
   display: none;
 }
 
-.chk__burger + label {
-  display: none;
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  z-index: 10;
-  cursor: pointer;
-}
-
-@media screen and (max-width: 700px) {
-  .chk__burger + label {
-    display: block;
-  }
-}
-.entete__nav {
-  display: none;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  flex-direction: column;
-}
-
 .chk__burger:checked ~ .entete__nav {
   display: flex;
-}
-
-.menu__a {
-  font-size: 22px;
-  font-weight: bold;
 }
 
 .entete {
@@ -236,9 +170,10 @@ Layout
 }
 .entete__nav {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  justify-content: flex-end;
+  position: static;
   flex-direction: row;
+  align-items: center;
   gap: 0 40px;
   flex-wrap: wrap;
 }
@@ -246,13 +181,44 @@ Layout
   .entete__nav {
     display: none;
     flex-direction: column;
-    height: 40vh;
+    height: 52vh;
     width: 100vw;
     padding-bottom: 20px;
     gap: 30px 0;
     position: absolute;
     top: 0;
     right: 0;
-    background-color: white;
+    background-color: #fff;
   }
+}
+
+/*
+  --------------------------------- Layout du pied de page
+*/
+footer {
+  background-color: rgb(236, 136, 13);
+  color: #000;
+}
+
+.piedpage {
+  display: flex;
+  flex-direction: column;
+}
+.piedpage__s1 {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3rem;
+}
+.piedpage__s1__externe {
+  flex: 0 0 20%;
+}
+.piedpage__s1__externe .menu {
+  display: flex;
+  flex-direction: column;
+}
+.piedpage__s1__adresse {
+  flex: 0 0 40%;
+}
+.piedpage__s1__description {
+  flex: 1 0 300px;
 }/*# sourceMappingURL=style.css.map */

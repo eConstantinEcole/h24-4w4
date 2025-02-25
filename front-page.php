@@ -6,7 +6,7 @@
 ?>
 
 <?php get_header() ?>
-<h1>front-page.php</h1>
+<h1>front-paaage.php</h1>
     <section class="hero">
         <div class="hero__contenu global">
             <h1 class="hero__titre">
@@ -43,9 +43,9 @@
                 the_content();
             } else { ?>         
             <article class="carte carte--grande">
-                <figure class="carte__image">
+                <!-- <figure class="carte__image">
                     <img src="images/img1.jpg" alt="Image de voyage">
-                </figure>
+                </figure> -->
                 <div class="carte__contenu">
                     <?php
                     if (has_post_thumbnail()) {
