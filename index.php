@@ -12,7 +12,7 @@
             <article class="populaire__article">
                 <?php 
                 if (has_post_thumbnail())
-                the_post_thumbnail(); ?>
+                the_post_thumbnail("large"); ?>
                 <h2 class="populaire__titre"><?php the_title(); ?></h2>
                 <div class="populaire__contenu"><?php the_content(); ?></div>
             </article>

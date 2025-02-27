@@ -1,5 +1,7 @@
 <?php
 
+
+
 function mon_theme_supports() {
 
   add_theme_support('title-tag');
