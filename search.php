@@ -1,26 +1,23 @@
 <?php
 /**
- * Modèle de recherche
+ * Modèle pour les résultats de recherche
  */
-?>
-
-<?php
 get_header();
 ?>
 <main class="site__main">
+    <section class="recherche__section">
+        <?php if (have_posts()) : ?>
+            <?php while (have_posts()) : the_post(); ?>
 
-<section class="recherche__section">
-   <?php
-   if (have_posts()):
-      while(have_posts()): the_post(); ?>
-      <article>
-         <h5><a href="<?php the_permalink(); ?>"> <?php the_title(); ?></a></h5>
-         <?php echo wp_trim_words(get_the_excerpt(), 60) ?>
-         <hr>
-      </article>
-      <?php endwhile; ?>
-   <?php endif; ?>
-</section>
+                <article class="populaire__article">
+                    <h2 class="populaire__titre"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
+                    <div class="populaire__contenu"><?php echo wp_trim_words(get_the_excerpt(), 50,"..."); ?></div>
+                    
+                </article>
+            <?php endwhile; ?>
+        <?php else : ?>
+            <p>Aucun résultat trouvé.</p>
+        <?php endif; ?>
+    </section>
 </main>
-<?php
-get_footer();
+<?php get_footer(); ?>
