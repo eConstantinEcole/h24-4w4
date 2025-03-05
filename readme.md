@@ -5,10 +5,10 @@ https://gftnth00.mywhc.ca/4w4_35/
 
 ## Cours: 4W4-Conception d'interface et développement Web
 
-Créer un thème WP pour un club de voyage.
-Auteur: Constantin Schmouker 
-Titre: Club de Voyage
-Description: 
+**Créer un thème WP pour un club de voyage.**
+**Auteur: Constantin Schmouker** 
+**Titre: Club de Voyage**
+## Description: ##
 
 **Projet Scolaire - Développement d'une Page Web sur un Club de Voyage (Cours 4W4)**  
 
