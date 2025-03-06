@@ -6,11 +6,58 @@
 .hero{
     min-height: 100vh;
     background-image: url("images/maldives.jpg");
+    width: 100%;
+    font-family: 'Inter', Arial;
+    color: black;
+    
+    
+    h1{
+        font-size: 100px;
+    }
+
+    .hero__description, .hero__courriel{
+        font-size: 30px;
+        font-weight: bold;
+        background-color: rgba(255, 255, 0, 0.221);
+        border-radius: 15px;
+        padding: 10px 15px;
+    }
 }
+
+
+.hero__icone-app{
+    padding-top: 2%;
+    padding-left: 1%;
+}
+
+.souligne, .souligne.c2:visited,
+.souligne.c2:active {
+    color: white;
+    text-shadow: 
+  2px 2px 1px black, 
+  2px -1px 1px black, 
+  -1px 1px 1px black, 
+  -1px -1px 1px black, 
+}
+
+.souligne:hover {
+    color: black;
+    text-shadow:none;
+    
+}
+.souligne.c1:hover{
+    background-color: rgba(94, 255, 0, 0.426);
+}
+.souligne.c2:hover{
+    background-color: rgba(0, 145, 255, 0.426);
+}
+
+
+
 
 .boiteflex {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     gap : 10px;
-}
+} 

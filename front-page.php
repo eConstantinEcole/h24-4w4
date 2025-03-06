@@ -14,6 +14,7 @@
             </h1>
             <p class="hero__description">
             <?php  bloginfo('description'); ?>
+            Découvrez notre <span class="souligne c1"> club de voyage</span> et explorez des destinations uniques à travers le monde. <a href="#footer" class="souligne c2">Rejoignez-nous</a> pour vivre des expériences inoubliables et partager votre passion du voyage !
             </p>
             <a href="" class="hero__courriel">
                 info@cmaisonneuve.qc.ca

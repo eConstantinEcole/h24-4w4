@@ -1,4 +1,4 @@
-<footer>
+<footer id="footer">
     <div class="piedpage global">
         <section class="piedpage__s1">
 
