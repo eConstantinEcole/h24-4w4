@@ -1,4 +1,8 @@
 <footer id="footer">
+    <?php 
+    $footer_mission = get_theme_mod('footer_mission', 'Default Title');
+    
+    ?>
     <div class="piedpage global">
         <section class="piedpage__s1">
 
@@ -27,9 +31,8 @@
 
             <!-- -----------MISSION DU CLUB----------- -->
              <div class="piedpage__s1__description">
-                <h1>La mission de notre club</h1>
-            
-                <p>Le but de notre club est de permettre à tous les passionnés de la nature de se retrouver et de partager leur passion.</p>
+                <h1>Mission du club de voyage</h1>
+                <p><?php echo $footer_mission ?></p>
             </div>
         </section>
         <section class="piedpage__s2"></section>
