@@ -7,30 +7,33 @@
 
 <?php get_header() ?>
 <h1>front-page.php</h1>
-<?php $hero_auteur = get_theme_mod('hero_auteur', 'Default Title'); ?>
+<?php $hero_auteur = get_theme_mod('hero_auteur', ''); ?>
 <?php $hero_background = get_theme_mod('hero_background', ''); ?>
+<?php $couleur = get_theme_mod('hero_couleur', '#fff') ?>
+<style>
+    .hero__couleur{
+        color: <?php echo $couleur ?>;
+    }
+</style>
 
     <section class="hero" style = "background-image: url(<?php echo $hero_background ?>);">
         <div class="hero__contenu global">
-            <h1 class="hero__titre">
+            <h1 class="hero__titre hero__couleur">
                 <?php  bloginfo('name'); ?>
             </h1>
             <p class="hero__description">
             <?php  bloginfo('description'); ?>
             Découvrez notre <span class="souligne c1"> club de voyage</span> et explorez des destinations uniques à travers le monde. <a href="#footer" class="souligne c2">Rejoignez-nous</a> pour vivre des expériences inoubliables et partager votre passion du voyage !
             </p>
-            <a href="" class="hero__courriel">
-                info@cmaisonneuve.qc.ca
+            <?php $hero_email = get_theme_mod('hero_email', 'info@cmaisonneuve.qc.ca'); ?>
+            <a href="mailto:<?php echo esc_attr($hero_email); ?>" class="hero__courriel">
+                <?php echo esc_html($hero_email); ?>
             </a>
+
             <button class="hero__bouton">
                 Inscription
             </button>
-            <div class="hero__icone-app">
-                <img src="https://s2.svgbox.net/social.svg?ic=facebook&color=000000" width="20" height="20">
-                <img src="https://s2.svgbox.net/social.svg?ic=linkedin&color=000000" width="20" height="20">
-                <img src="https://s2.svgbox.net/social.svg?ic=paypal&color=000000" width="20" height="20">
-                <img src="https://s2.svgbox.net/social.svg?ic=stackoverflow&color=000000" width="20" height="20">
-            </div>
+            <?php get_template_part('icons_social'); ?>
             <p>Auteur : <?php echo $hero_auteur ?></p>
         </div>
     </section>

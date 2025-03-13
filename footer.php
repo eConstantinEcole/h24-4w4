@@ -1,6 +1,8 @@
 <footer id="footer">
     <?php 
     $footer_mission = get_theme_mod('footer_mission', 'Default Title');
+    $footer_courriel = get_theme_mod('footer_courriel', 'Default Title');
+    $footer_telephone = get_theme_mod('footer_telephone', 'Default Title');
     
     ?>
     <div class="piedpage global">
@@ -21,9 +23,8 @@
             <!-- ---------CONTACT------------- -->
             <div class="piedpage__s1__adresse">
               <h1>Nous contacter</h1>
-                <div class="piedpage__s1__adresse__coord">
-                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Facere porro veniam vitae, tempore corporis omnis nam </p>
-                </div>
+                <p><?php echo $footer_courriel ?></p>
+                <p><?php echo $footer_telephone ?></p>
                 <div class="piedpage__s1__adresse__recherche">
                     <?php get_search_form();   ?>
                 </div>
