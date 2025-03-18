@@ -73,6 +73,28 @@ $wp_customize->add_section('footer_section', array(
   'priority' => 30,
 ));
 
+/////////////////////Auteur footer
+$wp_customize->add_setting('footer_auteur', array(
+  'default' => __('Constantin Schmouker', 'theme_31w'),
+  'sanitize_callback' => 'sanitize_text_field'
+));
+$wp_customize->add_control('footer_auteur', array(
+  'label' => __('Auteur', 'theme_31w'),
+  'section' => 'footer_section',
+  'type' => 'text',
+));
+
+///////////////////////////Adresse Footer
+$wp_customize->add_setting('footer_adresse', array(
+  'default' => __('3800 R. Sherbrooke E', 'theme_31w'),
+  'sanitize_callback' => 'sanitize_text_field'
+));
+$wp_customize->add_control('footer_adresse', array(
+  'label' => __('Adresse', 'theme_31w'),
+  'section' => 'footer_section',
+  'type' => 'text',
+));
+
 /////////////////////Courriel footer
 
 $wp_customize->add_setting('footer_courriel', array(
