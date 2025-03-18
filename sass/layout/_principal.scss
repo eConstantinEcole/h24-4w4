@@ -2,27 +2,58 @@
    margin : 0 auto;
    max-width: 1000px;
    font-family: 'Inter', Arial;
-
+    
 }
+
+
 
 .hero{
     min-height: 100vh;
     background-image: url("images/maldives.jpg");
     width: 100%;
     font-family: 'Inter', Arial;
-    color: black;
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    text-align: center; 
     
     
     h1{
         font-size: 100px;
     }
 
+    .hero__contenu.global {
+        margin: 0; 
+        max-width: 60%; 
+        height: 100%;
+        text-align: left; 
+        padding: 0 15px; 
+        background: rgba(#04BFBF, 0.4); /* Fond semi-transparent */
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px); /* Pour Safari */
+        border-radius: 15px;
+        
+        border: 2px solid rgba(255, 255, 255, 0.3); /* Bordure blanche semi-transparente */
+        box-shadow: 0 0 15px rgba(255, 255, 255, 0.4); /* Effet lumineux */
+        
+        animation: reflection 2s infinite alternate; /* Animation de la réflexion */
+    }
+    
+    @keyframes reflection {
+        0% { box-shadow: 0 0 15px rgba(255, 255, 255, 0.4); }
+        50% { box-shadow: 0 0 25px rgba(255, 255, 255, 0.6); }
+        100% { box-shadow: 0 0 15px rgba(255, 255, 255, 0.4); }
+    }
+    
+
     .hero__description, .hero__courriel{
         font-size: 30px;
         font-weight: bold;
-        background-color: rgba(255, 255, 0, 0.221);
         border-radius: 15px;
         padding: 10px 15px;
+    }
+    .hero__courriel{
+        color: black;
     }
 }
 
@@ -62,5 +93,5 @@
     flex-wrap: wrap;
     justify-content: space-between;
     gap : 10px;
-} 
+}
 
