@@ -18,6 +18,9 @@ Les Variables
 /* /////////////////////
 Base
 //////////////////////// */
+html{
+  background-color: #a7d9d96a;
+}
 a {
   color: #5a5;
   text-decoration: none;
