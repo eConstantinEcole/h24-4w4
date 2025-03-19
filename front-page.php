@@ -6,7 +6,6 @@
 ?>
 
 <?php get_header() ?>
-<h1>front-page.php</h1>
 <?php $hero_auteur = get_theme_mod('hero_auteur', ''); ?>
 <?php $hero_background = get_theme_mod('hero_background', ''); ?>
 <?php $couleur = get_theme_mod('hero_couleur', '#fff') ?>
@@ -45,7 +44,8 @@
              <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
              <?php if (in_category('galerie')){
                  the_content();
-             } else { ?>         
+             } 
+             else { ?>         
              <?php get_template_part("gabarit/carte"); ?>
              <?php } ?>
              <?php endwhile; endif; ?>

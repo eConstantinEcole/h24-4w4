@@ -1,64 +1,95 @@
-/* *******************
-Le composant .carte
-********************** */
-
 .carte {
-    border: 1px solid #ddd;
-    padding: 20px;
-    border-radius: 8px;
-    flex : 1 1 220px;
-    
-  
-    &--grande {
+  padding: 20px;
+  border-radius: 15px;
+  flex: 1 1 220px;
+  background-color: #ceffff;
+  margin-bottom: 5%;
+  position: relative;
+  overflow: hidden;
+
+  /* Effet de lumière aux bords */
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.4), 
+              inset 0 0 20px rgba(255, 255, 255, 0.2);
+
+  &--grande {
       padding: 40px;
-    }
-    &--petite {
+  }
+
+  &--petite {
       padding: 20px;
-    }
-    &__image img {
+  }
+
+  &__image img {
       max-width: 100%;
       border-radius: 8px;
-    }
-  
-    &__contenu {
+  }
+
+  &__contenu {
       margin-top: 15px;
-    }
-  
-    &__titre {
+  }
+
+  &__titre {
       font-size: 24px;
       color: #333;
-    }
-  
-    &__description {
+  }
+
+  &__description {
       font-size: 16px;
       color: #666;
-    }
-  
-    &__bouton {
+  }
+
+  &__bouton {
       padding: 10px 20px;
       background-color: #007bff;
       color: #fff;
       border: none;
       border-radius: 4px;
       cursor: pointer;
-  
-      &--actif {
-        background-color: #0056b3;
-      }
-  
-      &:hover {
-        background-color: #0056b3;
-      }
-    }
+      justify-content: center;
 
-    & .post-categories {
+      &--actif {
+          background-color: #0056b3;
+      }
+
+      &:hover {
+          background-color: #0056b3;
+      }
+  }
+
+  & .post-categories {
       list-style-type: none;
       gap: 5px;
       display: flex;
 
       a {
-        text-decoration: none;
+          text-decoration: none;
       }
-    }
   }
-  
+
+  .meteo {
+      display: flex;
+      flex-direction: row;
+      gap: 10px;
+      justify-content: center; 
+      align-items: center; 
+  }
+
+  .fa-sun {
+      color: rgba(255, 153, 0, 0.64);
+      font-size: 24px; 
+  }
+
+  /* Ajout du contour réfléchissant */
+  &::before {
+      content: "";
+      position: absolute;
+      top: -3px;
+      left: -3px;
+      right: -3px;
+      bottom: -3px;
+      border-radius: 15px;
+      background: linear-gradient(120deg, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.2));
+      z-index: -1;
+      filter: blur(8px);
+  }
+}

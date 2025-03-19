@@ -18,9 +18,6 @@ Les Variables
 /* /////////////////////
 Base
 //////////////////////// */
-html{
-  background-color: #a7d9d96a;
-}
 a {
   color: #5a5;
   text-decoration: none;
@@ -58,14 +55,17 @@ Les composants
   padding: 2px 5px;
 }
 
-/* *******************
-Le composant .carte
-********************** */
 .carte {
-  border: 1px solid #ddd;
   padding: 20px;
-  border-radius: 8px;
+  border-radius: 15px;
   flex: 1 1 220px;
+  background-color: #ceffff;
+  margin-bottom: 5%;
+  position: relative;
+  overflow: hidden;
+  /* Effet de lumière aux bords */
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.4), inset 0 0 20px rgba(255, 255, 255, 0.2);
+  /* Ajout du contour réfléchissant */
 }
 .carte--grande {
   padding: 40px;
@@ -95,6 +95,7 @@ Le composant .carte
   border: none;
   border-radius: 4px;
   cursor: pointer;
+  justify-content: center;
 }
 .carte__bouton--actif {
   background-color: #0056b3;
@@ -109,6 +110,29 @@ Le composant .carte
 }
 .carte .post-categories a {
   text-decoration: none;
+}
+.carte .meteo {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+}
+.carte .fa-sun {
+  color: rgba(255, 153, 0, 0.64);
+  font-size: 24px;
+}
+.carte::before {
+  content: "";
+  position: absolute;
+  top: -3px;
+  left: -3px;
+  right: -3px;
+  bottom: -3px;
+  border-radius: 15px;
+  background: linear-gradient(120deg, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.2));
+  z-index: -1;
+  filter: blur(8px);
 }
 
 .recherche {
@@ -140,6 +164,10 @@ Layout
   margin: 0 auto;
   max-width: 1000px;
   font-family: "Inter", Arial;
+}
+
+body {
+  background-color: rgba(0, 136, 255, 0.2431372549);
 }
 
 .hero {
@@ -217,8 +245,7 @@ Layout
 .boiteflex {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
-  gap: 10px;
+  gap: 20px;
 }
 
 .burger {
@@ -269,6 +296,12 @@ Layout
     right: 0;
     background-color: #fff;
   }
+}
+
+.entete__logo img {
+  width: 100px;
+  height: auto;
+  max-width: 100%;
 }
 
 /*
