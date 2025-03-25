@@ -12,6 +12,9 @@ Intégration de template-part -->
 
 <div class="page-404">
     <div class="page-404__contenu global">
+    <div class="page-404__icone">
+            <i class="fas fa-exclamation-triangle"></i> <!-- Icône d'erreur -->
+        </div>
         <h1 class="page-404__titre">
             <?php echo get_theme_mod('404_titre', 'Erreur 404 : Page introuvable'); ?>
         </h1>

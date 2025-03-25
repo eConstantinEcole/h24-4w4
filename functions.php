@@ -14,4 +14,9 @@ foreach ($function_files as $file) {
     include_once $functions_dir . $file;
 }
 
+function tp1_enqueue_styles() {
+    wp_enqueue_style('font-awesome', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css');
+}
+add_action('wp_enqueue_scripts', 'tp1_enqueue_styles');
+
 ?>
