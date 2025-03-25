@@ -186,6 +186,10 @@ Les composants
 .page-404__social {
   margin-top: 20px;
 }
+.page-404__icone {
+  font-size: 40px;
+  color: #0056b3;
+}
 
 /* /////////////////////////
 Layout 
