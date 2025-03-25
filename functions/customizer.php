@@ -142,4 +142,38 @@ $wp_customize->add_control('footer_mission', array(
 }
 
 add_action('customize_register', 'theme_31w_customize_register');
+
+function tp1_customize_register($wp_customize) {
+    // Section 404
+    $wp_customize->add_section('404_section', array(
+        'title' => __('Page 404', 'tp1'),
+        'priority' => 30,
+    ));
+
+    // Titre 404
+    $wp_customize->add_setting('404_titre', array(
+        'default' => 'Erreur 404 : Page introuvable',
+        'sanitize_callback' => 'sanitize_text_field',
+    ));
+
+    $wp_customize->add_control('404_titre', array(
+        'label' => __('Titre de la page 404', 'tp1'),
+        'section' => '404_section',
+        'type' => 'text',
+    ));
+
+    // Description 404
+    $wp_customize->add_setting('404_description', array(
+        'default' => 'Désolé, la page que vous recherchez est introuvable.',
+        'sanitize_callback' => 'sanitize_text_field',
+    ));
+
+    $wp_customize->add_control('404_description', array(
+        'label' => __('Description de la page 404', 'tp1'),
+        'section' => '404_section',
+        'type' => 'textarea',
+    ));
+}
+
+add_action('customize_register', 'tp1_customize_register');
 ?>

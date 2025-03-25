@@ -16,7 +16,8 @@ get_header();
                 </article>
             <?php endwhile; ?>
         <?php else : ?>
-            <p>Aucun résultat trouvé.</p>
+            <?php  
+            get_template_part('404');?>
         <?php endif; ?>
     </section>
 </main>
