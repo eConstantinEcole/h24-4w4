@@ -8,13 +8,13 @@
             <i class="fas fa-exclamation-triangle"></i> <!-- Icône d'erreur -->
         </div>
         <h1 class="page-404__titre">
-            <?php echo get_theme_mod('404_titre', 'Erreur 404 : Page introuvable'); ?>
+            <?php echo get_theme_mod('404_titre', "Oops, vous avez échoué sur l'île 404 !"); ?>
         </h1>
         <p class="page-404__description">
-            <?php echo get_theme_mod('404_description', 'Désolé, la page que vous recherchez est introuvable.'); ?>
+            <?php echo get_theme_mod('404_description', "Pas de panique, cher membre explorateur ! Vous avez dérivé un peu trop loin des destinations de rêve que notre club a soigneusement sélectionnées pour vous. Reprenez votre périple en cliquant sur 'Accueil' pour découvrir à nouveau nos voyages d’exception !"); ?>
         </p>
         <a href="<?php echo home_url(); ?>" class="page-404__bouton">
-            Retour à l'accueil
+            Acceuil
         </a>
         <div class="page-404__social">
             <?php get_template_part('icons_social'); ?>
