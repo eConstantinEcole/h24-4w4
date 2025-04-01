@@ -21,7 +21,7 @@ $background_image = get_theme_mod('404_image_fond', '');
 
         <div class="page-404__nav">
                 <?php wp_nav_menu(array(
-                            'menu' => 'principal',
+                            'menu' => 'page_404',
                             'container' => 'nav',
                             'container_class' => '404__menu',
                 )); ?>
