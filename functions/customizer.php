@@ -162,6 +162,18 @@ function tp1_customize_register($wp_customize) {
         'type' => 'text',
     ));
 
+    // Image de fond 404
+    $wp_customize->add_setting('404_image_fond', array(
+        'default' => '',
+        'sanitize_callback' => 'esc_url_raw',
+    ));
+
+    $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, '404_image_fond', array(
+        'label' => __('Image de fond pour la page 404', 'tp1'),
+        'section' => '404_section',
+        'settings' => '404_image_fond',
+    )));
+
     // Description 404
     $wp_customize->add_setting('404_description', array(
         'default' => 'Désolé, la page que vous recherchez est introuvable.',

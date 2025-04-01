@@ -1,8 +1,10 @@
-
-
 <?php get_header(); ?>
 
-<div class="page-404">
+<?php 
+$background_image = get_theme_mod('404_image_fond', '');
+?>
+
+<div class="page-404" style="background-image: url('<?php echo esc_url($background_image); ?>'); background-size: cover; background-position: center;">>
     <div class="page-404__contenu global">
     <div class="page-404__icone">
             <i class="fas fa-exclamation-triangle"></i> <!-- Icône d'erreur -->
@@ -14,12 +16,13 @@
             <?php echo get_theme_mod('404_description', "Pas de panique, cher membre explorateur ! Vous avez dérivé un peu trop loin des destinations de rêve que notre club a soigneusement sélectionnées pour vous. Reprenez votre périple en cliquant sur 'Accueil' pour découvrir à nouveau nos voyages d’exception !"); ?>
         </p>
         <a href="<?php echo home_url(); ?>" class="page-404__bouton">
-            Acceuil
+            Retour à l'accueil
         </a>
         <div class="page-404__social">
             <?php get_template_part('icons_social'); ?>
         </div>
     </div>
+    
 </div>
 
 <?php get_footer(); ?>
