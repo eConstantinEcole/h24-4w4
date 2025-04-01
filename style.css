@@ -162,14 +162,15 @@ Les composants
   padding: 50px 20px;
 }
 .page-404__titre {
-  font-size: 2.5rem;
+  font-size: 3rem;
   color: rgb(255, 204, 0);
   margin-bottom: 20px;
   background-color: rgba(11, 11, 11, 0.3);
   border-radius: 15px;
+  padding: 10px;
 }
 .page-404__description {
-  font-size: 1.2rem;
+  font-size: 2.2rem;
   padding: 3%;
   color: rgb(255, 204, 0);
   margin-bottom: 30px;
@@ -184,10 +185,11 @@ Les composants
   text-decoration: none;
   border-radius: 5px;
   transition: background-color 0.3s ease;
+  margin-bottom: 30px;
 }
 .page-404__bouton:hover {
   background-color: rgb(255, 204, 0);
-  color: rgb(102, 102, 102);
+  color: rgb(43, 43, 43);
 }
 .page-404__social {
   margin-top: 20px;
@@ -195,6 +197,104 @@ Les composants
 .page-404__icone {
   font-size: 40px;
   color: red;
+}
+.page-404 .menu_page_404 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 600px;
+  margin: 20px auto;
+  list-style: none;
+  padding: 0;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+.page-404 .menu_page_404 li {
+  display: inline-block;
+}
+.page-404 .menu_page_404 a {
+  text-decoration: none;
+  color: black;
+  background-color: yellow;
+  padding: 10px 15px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+  display: inline-block;
+}
+.page-404 .menu_page_404 a:hover {
+  background-color: rgb(255, 204, 0);
+  color: rgb(43, 43, 43);
+}
+
+.page-404 {
+  text-align: center;
+  padding: 50px 20px;
+}
+.page-404__titre {
+  font-size: 3rem;
+  color: rgb(255, 204, 0);
+  margin-bottom: 20px;
+  background-color: rgba(11, 11, 11, 0.3);
+  border-radius: 15px;
+  padding: 10px;
+}
+.page-404__description {
+  font-size: 2.2rem;
+  padding: 3%;
+  color: rgb(255, 204, 0);
+  margin-bottom: 30px;
+  background-color: rgba(11, 11, 11, 0.3);
+  border-radius: 15px;
+}
+.page-404__bouton {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: yellow;
+  color: black;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+  margin-bottom: 30px;
+}
+.page-404__bouton:hover {
+  background-color: rgb(255, 204, 0);
+  color: rgb(43, 43, 43);
+}
+.page-404__social {
+  margin-top: 20px;
+}
+.page-404__icone {
+  font-size: 40px;
+  color: red;
+}
+.page-404 .menu_page_404 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 600px;
+  margin: 20px auto;
+  list-style: none;
+  padding: 0;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+.page-404 .menu_page_404 li {
+  display: inline-block;
+}
+.page-404 .menu_page_404 a {
+  text-decoration: none;
+  color: black;
+  background-color: yellow;
+  padding: 10px 15px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+  display: inline-block;
+}
+.page-404 .menu_page_404 a:hover {
+  background-color: rgb(255, 204, 0);
+  color: rgb(43, 43, 43);
 }
 
 /* /////////////////////////

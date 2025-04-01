@@ -1,45 +1,79 @@
 .page-404 {
-  text-align: center;
-  padding: 50px 20px;
+    text-align: center;
+    padding: 50px 20px;
 
-  &__titre {
-      font-size: 2.5rem;
-      color: rgb(255, 204, 0);
-      margin-bottom: 20px;
-      background-color: rgba(11, 11, 11, 0.3);
-      border-radius: 15px;
-  }
+    &__titre {
+        font-size: 3rem;
+        color: rgb(255, 204, 0);
+        margin-bottom: 20px;
+        background-color: rgba(11, 11, 11, 0.3);
+        border-radius: 15px;
+        padding: 10px;
+    }
 
-  &__description {
-      font-size: 1.2rem;
-      padding: 3%;
-      color: rgb(255, 204, 0);
-      margin-bottom: 30px;
-      background-color: rgba(11, 11, 11, 0.3);
-      border-radius: 15px;
-  }
+    &__description {
+        font-size: 2.2rem;
+        padding: 3%;
+        color: rgb(255, 204, 0);
+        margin-bottom: 30px;
+        background-color: rgba(11, 11, 11, 0.3);
+        border-radius: 15px;
+    }
 
-  &__bouton {
-      display: inline-block;
-      padding: 10px 20px;
-      background-color: yellow;
-      color: black;
-      text-decoration: none;
-      border-radius: 5px;
-      transition: background-color 0.3s ease; 
+    &__bouton {
+        display: inline-block;
+        padding: 10px 20px;
+        background-color: yellow;
+        color: black;
+        text-decoration: none;
+        border-radius: 5px;
+        transition: background-color 0.3s ease;
+        margin-bottom: 30px;
 
-      &:hover {
-          background-color: rgb(255, 204, 0);
-          color: rgb(102, 102, 102);
-      }
-  }
+        &:hover {
+            background-color: rgb(255, 204, 0);
+            color: rgb(43, 43, 43);
+        }
+    }
 
-  &__social {
-      margin-top: 20px;
-  }
+    &__social {
+        margin-top: 20px;
+    }
 
-  &__icone{
-    font-size: 40px;
-    color: red;
-  }
+    &__icone {
+        font-size: 40px;
+        color: red;
+    }
+
+    .menu_page_404 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        max-width: 600px;
+        margin: 20px auto;
+        list-style: none;
+        padding: 0;
+        flex-wrap: wrap;
+        gap: 20px;
+
+        li {
+            display: inline-block;
+        }
+
+        a {
+            text-decoration: none;
+            color: black;
+            background-color: yellow;
+            padding: 10px 15px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+            display: inline-block;
+
+            &:hover {
+                background-color: rgb(255, 204, 0);
+                color: rgb(43, 43, 43);
+            }
+        }
+    }
 }

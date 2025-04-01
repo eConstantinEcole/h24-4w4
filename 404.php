@@ -18,6 +18,16 @@ $background_image = get_theme_mod('404_image_fond', '');
         <a href="<?php echo home_url(); ?>" class="page-404__bouton">
             Retour à l'accueil
         </a>
+
+        <nav class="menu_page_404">
+            <?php wp_nav_menu(array(
+                'menu' => 'page_404',
+                'container' => false, // Supprime le conteneur supplémentaire
+                'items_wrap' => '<ul class="menu">%3$s</ul>', // Structure personnalisée
+                'fallback_cb' => false, // Supprime le menu par défaut si aucun menu n'est défini
+            )); ?>
+        </nav>
+
         <div class="page-404__social">
             <?php get_template_part('icons_social'); ?>
         </div>
