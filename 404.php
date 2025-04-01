@@ -4,7 +4,7 @@
 $background_image = get_theme_mod('404_image_fond', '');
 ?>
 
-<div class="page-404" style="background-image: url('<?php echo esc_url($background_image); ?>'); background-size: cover; background-position: center;">>
+<div class="page-404" style="background-image: url('<?php echo esc_url($background_image); ?>'); background-size: cover; background-position: center;">
     <div class="page-404__contenu global">
     <div class="page-404__icone">
             <i class="fas fa-exclamation-triangle"></i> <!-- Icône d'erreur -->
@@ -19,14 +19,13 @@ $background_image = get_theme_mod('404_image_fond', '');
             Retour à l'accueil
         </a>
 
-        <nav class="menu_page_404">
-            <?php wp_nav_menu(array(
-                'menu' => 'page_404',
-                'container' => false, // Supprime le conteneur supplémentaire
-                'items_wrap' => '<ul class="menu">%3$s</ul>', // Structure personnalisée
-                'fallback_cb' => false, // Supprime le menu par défaut si aucun menu n'est défini
-            )); ?>
-        </nav>
+        <div class="page-404__nav">
+                <?php wp_nav_menu(array(
+                            'menu' => 'principal',
+                            'container' => 'nav',
+                            'container_class' => '404__menu',
+                )); ?>
+        </div>
 
         <div class="page-404__social">
             <?php get_template_part('icons_social'); ?>
