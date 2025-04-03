@@ -1,13 +1,14 @@
 (function(){
   console.log("vive java script");
 
-  let categoryId = 3; // ID de la catégorie initiale
+  let categoryId = null; // Aucune catégorie sélectionnée au départ
   const domaine = window.location.href;
-  
   const categorie__ul__li = document.querySelectorAll('.categorie__ul__li');
   const destinationList = document.querySelector('.destination__list');
 
   function fetchAndDisplayArticles(categoryId) {
+    if (!categoryId) return; // Ne rien faire si aucune catégorie n'est sélectionnée
+    
     let apiUrl = `${domaine}wp-json/wp/v2/posts?categories=${categoryId}`;
     
     fetch(apiUrl)
@@ -27,8 +28,7 @@
       .catch(error => console.error('Erreur lors de la récupération des articles:', error));
   }
 
-  // Charger les articles de la catégorie initiale
-  fetchAndDisplayArticles(categoryId);
+  // Ne pas charger d'articles au démarrage
 
   // Ajouter l'événement de filtrage sur les catégories
   categorie__ul__li.forEach(li => {
