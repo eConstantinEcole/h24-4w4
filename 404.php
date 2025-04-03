@@ -28,7 +28,7 @@ $background_image = get_theme_mod('404_image_fond', '');
         </div>
 
         <div class="page-404__social">
-            <?php get_template_part('icons_social'); ?>
+            <?php get_template_part('icons_social'); ?> 
         </div>
     </div>
     
