@@ -1,7 +1,19 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    max-width: 100%;
+    font-family: 'Inter', Arial, sans-serif; /* Applique la police à tout le site */
+    box-sizing: border-box; /* Assure une gestion cohérente des marges et paddings */
+}
+
 .global {
-   margin: 0 auto;
-   max-width: 1000px;
-   font-family: 'Inter', Arial;
+    margin: 0 auto;
+    max-width: 1000px;
+    font-family: 'Inter', Arial;
+}
+
+* {
+    box-sizing: inherit; /* Hérite de la règle box-sizing définie dans html */
 }
 
 body {
@@ -93,4 +105,4 @@ body {
 }
 
 
-    
+
