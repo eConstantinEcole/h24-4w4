@@ -1,42 +1,71 @@
 (function(){
   console.log("vive java script");
 
-  let categoryId = null; // aucune catégorie sélectionnée au départ
+  let idCategorie = null;
 
   const domaine = window.location.href; 
-  const categorie__ul__li = document.querySelectorAll('.categorie__ul__li');
-  const destinationList = document.querySelector('.destination__list');
+  const listeCategories = document.querySelectorAll('.categorie__ul__li');
+  const listeDestinations = document.querySelector('.destination__list');
 
-  function fetchAndDisplayArticles(categoryId) {
-    if (!categoryId) return;
+  function recupererEtAfficherArticles(idCategorie) {
+    if (!idCategorie) return;
 
-    let apiUrl = `${domaine}wp-json/wp/v2/posts?categories=${categoryId}`;
+    let urlApi = `${domaine}wp-json/wp/v2/posts?categories=${idCategorie}`;
 
-    fetch(apiUrl)
+    fetch(urlApi)
       .then(response => response.json())
-      .then(data => {
-        destinationList.innerHTML = ''; // Nettoyer les articles existants
-        data.forEach(article => {
-          const articleElement = document.createElement('div');
-          articleElement.innerHTML = `
-            <h3>${article.title.rendered}</h3>
-            <p>${article.content.rendered}</p>
-            <a href="${article.link}">Lire plus</a>
-          `;
-          destinationList.appendChild(articleElement);
+      .then(donnees => {
+        listeDestinations.innerHTML = '';
+
+        donnees.forEach(article => {
+          const elementArticle = document.createElement('div');
+          elementArticle.classList.add('article');
+
+          const contenuComplet = document.createElement('div');
+          contenuComplet.innerHTML = article.content.rendered;
+          contenuComplet.style.display = 'none';
+
+          const extrait = document.createElement('p');
+          const textOnly = contenuComplet.textContent || contenuComplet.innerText || "";
+          const mots = textOnly.trim().split(/\s+/).slice(0, 20).join(' ') + '...';
+          extrait.textContent = mots;
+
+          const boutonLireSuite = document.createElement('button');
+          boutonLireSuite.textContent = 'Lire la suite';
+          boutonLireSuite.style.cursor = 'pointer';
+
+          const lienVersArticle = document.createElement('a');
+          lienVersArticle.href = article.link;
+          lienVersArticle.textContent = 'Lire plus';
+          lienVersArticle.style.marginLeft = '10px';
+
+          boutonLireSuite.addEventListener('click', () => {
+            contenuComplet.style.display = 'block';
+            boutonLireSuite.style.display = 'none';
+            extrait.style.display = 'none';
+          });
+
+          const titre = document.createElement('h3');
+          titre.innerHTML = article.title.rendered;
+
+          elementArticle.appendChild(titre);
+          elementArticle.appendChild(extrait);
+          elementArticle.appendChild(boutonLireSuite);
+          elementArticle.appendChild(lienVersArticle);
+          elementArticle.appendChild(contenuComplet);
+          listeDestinations.appendChild(elementArticle);
         });
       })
-      .catch(error => console.error('Erreur lors de la récupération des articles :', error));
+      .catch(erreur => console.error('Erreur lors de la récupération des articles :', erreur));
   }
 
-  // Ajouter l'événement de filtrage sur les catégories
-  categorie__ul__li.forEach(li => {
-    li.addEventListener('click', function() {
-      categoryId = li.dataset.id;
-      console.log('ID de la catégorie sélectionnée :', categoryId); // Log ID de la catégorie
-
-      fetchAndDisplayArticles(categoryId);
+  listeCategories.forEach(categorie => {
+    categorie.addEventListener('click', function() {
+      idCategorie = categorie.dataset.id;
+      console.log('ID de la catégorie sélectionnée :', idCategorie);
+      recupererEtAfficherArticles(idCategorie);
     });
   });
 
 })();
+  
