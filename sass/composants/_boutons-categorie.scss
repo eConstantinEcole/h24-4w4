@@ -1,0 +1,22 @@
+.categorie__ul{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2%;
+  list-style-type: none;
+  justify-content: center;
+  &__li{
+    border: 1px solid #aaa;
+    padding: 10px;
+    border-radius: 15px;
+    background-color: rgb(50, 50, 216);
+    color: rgb(206, 206, 206);
+  }
+  &__li:hover{
+    background-color: rgb(206, 206, 206);
+    color: rgb(50, 50, 216);
+    transition: all 0.2s ease-in-out;
+    cursor: pointer;
+  }
+}
+
+
