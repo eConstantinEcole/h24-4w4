@@ -34,6 +34,7 @@
           boutonLireSuite.textContent = 'Lire la suite';
           boutonLireSuite.style.cursor = 'pointer';
 
+
           const lienVersArticle = document.createElement('a');
           lienVersArticle.href = article.link;
           lienVersArticle.textContent = 'Lire plus';
