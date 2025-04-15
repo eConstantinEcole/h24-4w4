@@ -21,6 +21,17 @@ body {
 }
 
 
-
+.global {
+    margin : 0 auto;
+    max-width: 1000px;
+ }
+ 
+ 
+ .boiteflex {
+     display: flex;
+     flex-wrap: wrap;
+     justify-content: space-between;
+     gap : 10px;
+ }
 
 

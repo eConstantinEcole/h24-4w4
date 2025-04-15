@@ -1,72 +1,49 @@
-(function(){
-  console.log("vive java script");
+(function () {
+    console.log("vive Javascript");
 
-  let idCategorie = null;
+    let categoryId = 3; // ID de la catégorie par défaut
+    const domaine = window.location.href; // Domaine actuel
+    let apiUrl = `${domaine}wp-json/wp/v2/posts?categories=${categoryId}`;
+    const listeCategories = document.querySelectorAll(".categorie__ul__li");
+    const listeDestinations = document.querySelector('.destination__list');
 
-  const domaine = window.location.href; 
-  const listeCategories = document.querySelectorAll('.categorie__ul__li');
-  const listeDestinations = document.querySelector('.destination__list');
+    console.log("Nombre de catégories :", listeCategories.length);
 
-  function recupererEtAfficherArticles(idCategorie) {
-    if (!idCategorie) return;
+    // Fonction pour récupérer et afficher les articles
+    function fetchAndDisplayArticles(apiUrl) {
+        fetch(apiUrl)
+            .then(response => response.json())
+            .then(data => {
+                listeDestinations.innerHTML = ""; // Nettoyer la liste des articles
 
-    let urlApi = `${domaine}wp-json/wp/v2/posts?categories=${idCategorie}`;
+                data.forEach(article => {
+                    const articleElement = document.createElement('div');
+                    articleElement.classList.add('article');
 
-    fetch(urlApi)
-      .then(response => response.json())
-      .then(donnees => {
-        listeDestinations.innerHTML = '';
+                    // Générer le contenu de l'article
+                    articleElement.innerHTML = `
+                        <h3>${article.title.rendered}</h3>
+                        <p>${article.excerpt.rendered}</p>
+                        <a href="${article.link}" class="article__link">Lire plus</a>
+                    `;
 
-        donnees.forEach(article => {
-          const elementArticle = document.createElement('div');
-          elementArticle.classList.add('article');
+                    listeDestinations.appendChild(articleElement);
+                });
+            })
+            .catch(error => console.error('Erreur lors de la récupération des articles :', error));
+    }
 
-          const contenuComplet = document.createElement('div');
-          contenuComplet.innerHTML = article.content.rendered;
-          contenuComplet.style.display = 'none';
+    // Charger les articles de la catégorie par défaut
+    fetchAndDisplayArticles(apiUrl);
 
-          const extrait = document.createElement('p');
-          const textOnly = contenuComplet.textContent || contenuComplet.innerText || "";
-          const mots = textOnly.trim().split(/\s+/).slice(0, 20).join(' ') + '...';
-          extrait.textContent = mots;
+    // Ajouter un événement pour chaque catégorie
+    listeCategories.forEach(categorie => {
+        categorie.addEventListener("mousedown", function () {
+            categoryId = categorie.dataset.id; // Récupérer l'ID de la catégorie
+            apiUrl = `${domaine}wp-json/wp/v2/posts?categories=${categoryId}`;
+            console.log("Nouvelle URL de l'API :", apiUrl);
 
-          const boutonLireSuite = document.createElement('button');
-          boutonLireSuite.textContent = 'Lire la suite';
-          boutonLireSuite.style.cursor = 'pointer';
-
-
-          const lienVersArticle = document.createElement('a');
-          lienVersArticle.href = article.link;
-          lienVersArticle.textContent = 'Lire plus';
-          lienVersArticle.style.marginLeft = '10px';
-
-          boutonLireSuite.addEventListener('click', () => {
-            contenuComplet.style.display = 'block';
-            boutonLireSuite.style.display = 'none';
-            extrait.style.display = 'none';
-          });
-
-          const titre = document.createElement('h3');
-          titre.innerHTML = article.title.rendered;
-
-          elementArticle.appendChild(titre);
-          elementArticle.appendChild(extrait);
-          elementArticle.appendChild(boutonLireSuite);
-          elementArticle.appendChild(lienVersArticle);
-          elementArticle.appendChild(contenuComplet);
-          listeDestinations.appendChild(elementArticle);
+            fetchAndDisplayArticles(apiUrl); // Charger les articles de la nouvelle catégorie
         });
-      })
-      .catch(erreur => console.error('Erreur lors de la récupération des articles :', erreur));
-  }
-
-  listeCategories.forEach(categorie => {
-    categorie.addEventListener('click', function() {
-      idCategorie = categorie.dataset.id;
-      console.log('ID de la catégorie sélectionnée :', idCategorie);
-      recupererEtAfficherArticles(idCategorie);
     });
-  });
-
 })();
-  

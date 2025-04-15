@@ -11,7 +11,7 @@ function theme_31w_customize_register($wp_customize) {
 ));
 
 $wp_customize->add_setting('hero_auteur', array(
-  'default' => __('Constantin Schmouker', 'theme_31w'),
+  'default' => __('Eddy Martin', 'theme_31w'),
   'sanitize_callback' => 'sanitize_text_field'
 ));
 
@@ -36,16 +36,17 @@ $wp_customize->add_control('hero_email', array(
 
 
 //////////////////////////////////Image en background de la zone hero
-$wp_customize->add_setting('hero_background', array(
-  'default' => '',
-  'sanitize_callback' => 'esc_url_raw',
-));
+for ($k = 0; $k < 3; $k++) {
+    $wp_customize->add_setting('hero_background_' . $k, array(
+        'default' => '',
+        'sanitize_callback' => 'esc_url_raw',
+    ));
 
-$wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'hero_background', array(
-  'label' => __('Image en arrière plan', 'theme_31w'),
-  'section' => 'hero_section',
-)));
-
+    $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'hero_background_' . $k, array(
+        'label' => __('Image en background ' . ($k + 1), 'theme_31w'),
+        'section' => 'hero_section',
+    )));
+}
 
 
 // Couleur
@@ -69,7 +70,7 @@ $wp_customize->add_setting('hero_footer', array(
 
 // ///////////////////////////FOOTER
 $wp_customize->add_section('footer_section', array(
-  'title' => __('Section Footer', 'theme_31w'),
+  'title' => __('Section pied de page', 'theme_31w'),
   'priority' => 30,
 ));
 

@@ -372,6 +372,18 @@ body {
   background-color: rgba(0, 136, 255, 0.2431372549);
 }
 
+.global {
+  margin: 0 auto;
+  max-width: 1000px;
+}
+
+.boiteflex {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 10px;
+}
+
 .burger {
   display: none;
 }
@@ -493,11 +505,13 @@ body {
   align-items: center;
   text-align: center;
 }
-.hero__carroussel {
+.hero__carrousel {
   top: 0;
   left: 0;
   position: absolute;
   background-repeat: no-repeat;
+  min-height: 100vh;
+  width: 100%;
 }
 .hero h1 {
   font-size: 100px;
