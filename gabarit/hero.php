@@ -18,6 +18,14 @@ $hero_email = get_theme_mod('hero_email', 'info@cmaisonneuve.qc.ca');
 </style>
 
 <section class="hero">
+
+    <!-- Carrousel d'images de fond -->
+    <div class="hero__backgrounds">
+        <div class="hero__carrousel" style="background-image: url('<?php echo esc_url($hero_background[0]); ?>');"></div>
+        <div class="hero__carrousel" style="background-image: url('<?php echo esc_url($hero_background[1]); ?>');"></div>
+        <div class="hero__carrousel" style="background-image: url('<?php echo esc_url($hero_background[2]); ?>');"></div>
+    </div>
+
     <!-- Contenu texte -->
     <div class="hero__contenu global">
         <h1 class="hero__titre hero__couleur">
@@ -40,11 +48,6 @@ $hero_email = get_theme_mod('hero_email', 'info@cmaisonneuve.qc.ca');
         </div>
         <p>Auteur : <?php echo esc_html($hero_auteur); ?></p>
     </div>
-
-    <!-- Carrousel d'images de fond -->
-    <div class="hero__carrousel" style="background-image: url('<?php echo esc_url($hero_background[0]); ?>');"></div>
-    <div class="hero__carrousel" style="background-image: url('<?php echo esc_url($hero_background[1]); ?>');"></div>
-    <div class="hero__carrousel" style="background-image: url('<?php echo esc_url($hero_background[2]); ?>');"></div>
 
     <!-- Radio boutons pour changer de slide -->
     <div class="hero__radio">

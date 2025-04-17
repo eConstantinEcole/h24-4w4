@@ -369,7 +369,7 @@ html, body {
 }
 
 body {
-  background-color: rgba(0, 136, 255, 0.2431372549);
+  background-color: rgba(0, 136, 255, 0.0666666667);
 }
 
 .global {
@@ -497,6 +497,7 @@ body {
 }
 
 .hero {
+  position: relative;
   min-height: 100vh;
   width: 100%;
   font-family: "Inter", Arial;
@@ -510,6 +511,8 @@ body {
   left: 0;
   position: absolute;
   background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
   min-height: 100vh;
   width: 100%;
   opacity: 0;
@@ -518,18 +521,20 @@ body {
 }
 .hero__carrousel.active {
   opacity: 1;
-  z-index: 1;
+  z-index: -1;
 }
 .hero h1 {
   font-size: 100px;
 }
 .hero .hero__contenu.global {
+  position: relative;
+  z-index: 1;
   margin: 0;
   max-width: 60%;
   height: 100%;
   text-align: left;
   padding: 0 15px;
-  background: rgba(4, 191, 191, 0.4); /* Fond semi-transparent */
+  background: rgba(255, 255, 255, 0.8); /* Fond semi-transparent */
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px); /* Pour Safari */
   border-radius: 15px;
@@ -548,7 +553,8 @@ body {
     box-shadow: 0 0 15px rgba(255, 255, 255, 0.4);
   }
 }
-.hero .hero__description, .hero .hero__courriel {
+.hero .hero__description,
+.hero .hero__courriel {
   font-size: 30px;
   font-weight: bold;
   border-radius: 15px;
@@ -561,7 +567,8 @@ body {
   padding-top: 2%;
   padding-left: 1%;
 }
-.hero .souligne, .hero .souligne.c2:visited,
+.hero .souligne,
+.hero .souligne.c2:visited,
 .hero .souligne.c2:active {
   color: white;
   text-shadow: 2px 2px 1px black, 2px -1px 1px black, -1px 1px 1px black, -1px -1px 1px black;

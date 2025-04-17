@@ -10,4 +10,7 @@ function tp1_enqueue_styles() {
 }
 add_action('wp_enqueue_scripts', 'tp1_enqueue_styles');
 
+add_action('after_setup_theme', function () {
+    load_theme_textdomain('tp1-em', get_template_directory() . '/languages');
+});
 ?>
