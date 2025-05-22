@@ -18,7 +18,7 @@
         } else { ?>         
         <?php get_template_part("gabarit/carte"); ?>
         <?php } ?>
-        <?php endwhile; endif; ?>
+        <?php endwhile; endif; ?> 
     </div>
 </section>
 

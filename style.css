@@ -384,6 +384,11 @@ body {
   gap: 10px;
 }
 
+.destination__titre {
+  text-align: center;
+  margin: 0 auto;
+}
+
 .burger {
   display: none;
 }
