@@ -16,6 +16,8 @@ Template Name: Pays
     <?php the_content(); ?>
 </div>
 
+<?php creer_vague('#e0f7fa', '#fff'); // Vague entre intro et REST-API ?>
+
 <!-- Menu des pays -->
 <div class="menu-pays">
     <?php
@@ -29,9 +31,9 @@ Template Name: Pays
     ?>
 </div>
 
-
-
 <div id="liste-articles"></div>
+
+<?php creer_vague('#fff', '#e0f7fa'); // Vague entre REST-API et pied de page ?>
 
 <script>
 function fetchArticlesByCountry(pays) {
