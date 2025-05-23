@@ -189,4 +189,24 @@ function tp1_customize_register($wp_customize) {
 }
 
 add_action('customize_register', 'tp1_customize_register');
+ 
+// === Description personnalisable pour la page Pays ===
+function customizer_section_pays($wp_customize) {
+    $wp_customize->add_section('section_pays', array(
+        'title' => 'Page Pays',
+        'priority' => 30,
+    ));
+
+    $wp_customize->add_setting('pays_description', array(
+        'default' => "Texte de description par défaut pour la page Pays.",
+        'sanitize_callback' => 'wp_kses_post', // autorise HTML de base
+    ));
+
+    $wp_customize->add_control('pays_description', array(
+        'label' => 'Description de la page Pays',
+        'section' => 'section_pays',
+        'type' => 'textarea',
+    ));
+}
+add_action('customize_register', 'customizer_section_pays');
 ?>
