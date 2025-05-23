@@ -12,7 +12,7 @@ Template Name: Pays
     <?php echo wp_kses_post(get_theme_mod('pays_description', 'Texte de description par défaut pour la page Pays.')); ?>
 </p>
 
-<div class="contenu-page">
+<div class="galerie">
     <?php the_content(); ?>
 </div>
 
@@ -71,12 +71,18 @@ function fetchArticlesByCountry(pays) {
 
 document.querySelectorAll('.bouton-pays').forEach(btn => {
     btn.addEventListener('click', function() {
+        // Retire la classe active de tous les boutons
+        document.querySelectorAll('.bouton-pays').forEach(b => b.classList.remove('active'));
+        // Ajoute la classe active au bouton cliqué
+        this.classList.add('active');
         fetchArticlesByCountry(this.getAttribute('data-pays'));
     });
 });
 
 // _Par défaut : France
 window.addEventListener('DOMContentLoaded', function() {
+    const btnFrance = document.querySelector('.bouton-pays[data-pays="France"]');
+    if (btnFrance) btnFrance.classList.add('active');
     fetchArticlesByCountry('France');
 });
 </script>

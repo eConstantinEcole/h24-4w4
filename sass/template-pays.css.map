@@ -1,1 +1,1 @@
-{"version":3,"sourceRoot":"","sources":[],"names":[],"mappings":"","file":"template-pays.css"}
+{"version":3,"sourceRoot":"","sources":["composants/template-pays.scss"],"names":[],"mappings":"AAAA;EACI;;;AAEJ;EACI","file":"template-pays.css"}
